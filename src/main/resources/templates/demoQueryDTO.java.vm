@@ -1,0 +1,20 @@
+package ${cfg.packageParent}.dto.${package.ModuleName};
+
+import lombok.Data;
+import ${cfg.packageParent}.dto.PageDTO;
+import lombok.EqualsAndHashCode;
+import io.swagger.annotations.ApiModel;
+
+/**
+ * 输出传输对象
+ * @author ${author}
+ * @date  ${date}
+ */
+@Data
+@EqualsAndHashCode(callSuper = true)
+@ApiModel(value="${entity}查询传输对象", description="$!{table.comment}")
+public class ${entity}QueryDTO extends PageDTO {
+    #if(${entitySerialVersionUID})
+        private static final long serialVersionUID=1L;
+    #end
+}

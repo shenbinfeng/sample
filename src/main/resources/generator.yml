@@ -1,0 +1,19 @@
+author: shenbinfeng
+datasource:
+  url: jdbc:mysql://localhost:3306/legal?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai&allowMultiQueries=true&allowPublicKeyRetrieval=true
+  username: root
+  password: 123456
+  driverName: com.mysql.cj.jdbc.Driver
+packageParent: com.shen.sample
+path: /src/main/java/com/shen/sample
+superEntityClass: com.shen.sample.entity.BaseId
+templatePath:
+  controller: templates/controller.java.vm
+  service: templates/service.java.vm
+  serviceImpl: templates/serviceImpl.java.vm
+  entity: templates/entity.java.vm
+  mapper: templates/mapper.java.vm
+  mapperXml: templates/mapper.xml.vm
+  inDto: templates/demoInDTO.java.vm
+  outDto: templates/demoOutDTO.java.vm
+  queryDto: templates/demoQueryDTO.java.vm

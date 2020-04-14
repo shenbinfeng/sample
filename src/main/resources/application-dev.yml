@@ -1,0 +1,105 @@
+#---------------------------------开发环境下配置-------------------------------#
+server:
+  # 应用程序启动端口
+  port: 8228
+  # 应用程序前缀
+  servlet:
+    context-path: /demo
+#---------------------------------spring 组件配置------------------------------#
+spring:
+  # 数据源
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/legal?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai&allowMultiQueries=true&allowPublicKeyRetrieval=true
+    username: root
+    password: 123456
+    type: com.alibaba.druid.pool.DruidDataSource
+    # 连接池配置
+    druid:
+      # 初始话大小，最小，最大
+      initial-size: 5
+      min-idle: 5
+      max-active: 20
+      # 配置获取连接等待超时的时间 单位毫秒
+      max-wait: 60000
+      # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+      time-between-eviction-runs-millis: 60000
+      # 配置一个连接在池中最小生存的时间，单位是毫秒
+      min-evictable-idle-time-millis: 300000
+      # 用来检测连接是否有效的sql，要求是一个查询语句
+      validation-query: select 'x'
+      # 建议配置为true，不影响性能，并且保证安全性。申请连接的时候检测，如果空闲时间大于timeBetweenEvictionRunsMillis，执行validationQuery检测连接是否有效。
+      test-while-idle: true
+      # 申请连接时执行validationQuery检测连接是否有效，做了这个配置会降低性能。
+      test-on-borrow: false
+      # 归还连接时执行validationQuery检测连接是否有效，做了这个配置会降低性能。
+      test-on-return: false
+      # 打开PSCache，并且指定每个连接上PSCache的大小
+      pool-prepared-statements: true
+      max-pool-prepared-statement-per-connection-size: 20
+      # 配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙, 'logback'为系统日志框架
+      filters: stat,wall,slf4j
+      ## 监控配置
+      web-stat-filter:
+        enabled: true
+        url-pattern: /*
+        exclusions: \*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*
+      # StatViewServlet配置
+      stat-view-servlet:
+        enabled: true
+        url-pattern: /druid/*
+        reset-enable: false
+        login-username: admin
+        login-password: Admin123456!
+        #allow: 222.209.150.239
+      ## 配置StatFilter 慢SQL记录
+      filter:
+        stat:
+          db-type: mysql
+          log-slow-sql: true
+          slow-sql-millis: 1000
+  redis:
+    host: localhost
+    port: 6379
+    password: 123456
+    database: 0
+    lettuce:
+      pool:
+        min-idle: 0
+        max-active: 8
+        max-idle: 8
+        max-wait: -1ms
+#---------------------------------Swagger API 配置------------------------------#
+swagger:
+  # 公共信息
+  enabled: true
+  title: XXX后台接口
+  description:
+  version: 1.0
+  contact:
+    name: Mr.shen
+    email: 822469306@qq.com
+  base-package: com.shen.sample
+  base-path: /**
+  terms-of-service-url: 萌鸡小队
+  ui-config:
+    json-editor: true
+  ## 需要排除的URL规则
+  exclude-path: /error, /ops/**
+#---------------------------------日志 打印级别------------------------------#
+logging:
+  level:
+    root: info
+    com:
+      gcniot:
+        pets: debug
+    # 解决Swagger NumberFormatException
+    io:
+      swagger:
+        models:
+          parameters:
+            AbstractSerializableParameter: ERROR
+#--------------------------------mybatis-plus日志配置 ------------------------------------#
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

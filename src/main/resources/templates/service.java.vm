@@ -1,0 +1,47 @@
+package ${cfg.packageParent}.service.${package.ModuleName};
+
+import com.baomidou.mybatisplus.extension.service.IService;
+import ${cfg.packageParent}.entity.${package.ModuleName}.${entity};
+import ${cfg.packageParent}.core.result.ExecutionResult;
+import ${cfg.packageParent}.dto.${package.ModuleName}.${entity}QueryDTO;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import ${cfg.packageParent}.dto.${package.ModuleName}.${entity}OutDTO;
+
+/**
+ * <p>
+ * 服务类
+ * </p>
+ *
+ * @author ${author}
+ * @date ${date}
+ */
+public interface I${entity}Service extends IService<${entity}> {
+    /**
+     * 创建
+     *
+     * @param entity 对象
+     * @return
+     */
+    ExecutionResult create(${entity} entity);
+
+    /**
+     * 修改
+     *
+     * @param entity 对象
+     * @return
+     */
+    ExecutionResult update(${entity} entity);
+
+    /**
+     * 删除
+     * @param id id
+     * @return
+     */
+    ExecutionResult delete(long id);
+
+    /**
+     * 获取列表
+     * @return
+     */
+    ExecutionResult<IPage<${entity}OutDTO>> getList(${entity}QueryDTO queryDto);
+}

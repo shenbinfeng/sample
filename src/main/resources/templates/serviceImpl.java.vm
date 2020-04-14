@@ -1,0 +1,58 @@
+package ${cfg.packageParent}.serviceImpl.${package.ModuleName};
+
+import ${cfg.packageParent}.dto.${package.ModuleName}.${entity}QueryDTO;
+import ${cfg.packageParent}.entity.${package.ModuleName}.${entity};
+import ${cfg.packageParent}.mapper.${package.ModuleName}.${table.mapperName};
+import ${cfg.packageParent}.service.${package.ModuleName}.${table.serviceName};
+import ${superServiceImplClassPackage};
+import org.springframework.stereotype.Service;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import ${cfg.packageParent}.core.result.ResultEnum;
+import ${cfg.packageParent}.core.result.ResultBuilder;
+import ${cfg.packageParent}.core.result.ExecutionResult;
+import org.springframework.stereotype.Service;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import ${cfg.packageParent}.dto.${package.ModuleName}.${entity}OutDTO;
+
+/**
+  * <p>
+  * $!{table.comment} 服务实现类
+  * </p>
+  *
+  * @author ${author}
+  * @date ${date}
+  */
+@Service
+public class ${entity}ServiceImpl extends ${superServiceImplClass}<${table.mapperName}, ${entity}> implements ${table.serviceName} {
+	@Override
+    public ExecutionResult create(${entity} entity) {
+        if (this.save(entity)) {
+            return ResultBuilder.success();
+        } else {
+            return ResultBuilder.fail(ResultEnum.SAVE_FAIL);
+        }
+    }
+
+    @Override
+    public ExecutionResult update(${entity} entity) {
+        if (this.updateById(entity)) {
+            return ResultBuilder.success();
+        } else {
+            return ResultBuilder.fail(ResultEnum.EDIT_FAIL);
+        }
+    }
+
+    @Override
+    public ExecutionResult delete(long id) {
+        if (this.removeById(id)) {
+            return ResultBuilder.success();
+        } else {
+            return ResultBuilder.fail(ResultEnum.DELETE_FAIL);
+        }
+    }
+
+    @Override
+    public ExecutionResult<IPage<${entity}OutDTO>> getList(${entity}QueryDTO queryDto) {
+        return ResultBuilder.success(this.getBaseMapper().selectPageList(new Page<>(queryDto.getPagesCurrent(), queryDto.getPagesSize()), queryDto));
+    }
+}

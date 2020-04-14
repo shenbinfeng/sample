@@ -1,0 +1,34 @@
+#---------------------------------主配置文件配置:该配置文件只需要选择从配置文件-------------------------------#
+spring:
+  output:
+    ansi:
+      enabled: ALWAYS
+  # 序列化返回JSON日期时区为东八区,日期格式为 2019-04-17 11:42:20
+  mvc:
+    date-format: yyyy-MM-dd HH:mm:ss
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+    property-naming-strategy: CAMEL_CASE_TO_LOWER_CASE_WITH_UNDERSCORES
+  # AOP 配置
+  aop:
+    auto: true
+    proxy-target-class: true
+#--------------------------------MyBatis Plus 配置------------------------------------#
+mybatis-plus:
+  # MyBatis 实体类扫描的包名
+  type-aliases-package: com.shen.sample.entity
+  # MyBatis XML 文件路径
+  mapper-locations: classpath:mapper/*/*Mapper.xml
+  global-config:
+    db-config:
+      # 主键策略 自增
+      id-type: auto
+      # 表名、是否使用下划线命名
+      table-underline: true
+  configuration:
+    # 驼峰支持
+    map-underscore-to-camel-case: true
+    # 关闭二级缓存
+    cache-enabled: false
+  type-enums-package: com.shen.sample.entity.enums
