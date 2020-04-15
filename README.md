@@ -101,6 +101,8 @@ templatePath:
 
 ### 启动代码生成器
 
+位置：sample->core->util->CodeGenerator.java
+
 效果图
 
 ![image-20200415214152729](C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20200415214152729.png)
