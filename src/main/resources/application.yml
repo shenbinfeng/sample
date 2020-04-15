@@ -1,34 +1,34 @@
-#---------------------------------Ö÷ÅäÖÃÎÄ¼şÅäÖÃ:¸ÃÅäÖÃÎÄ¼şÖ»ĞèÒªÑ¡Ôñ´ÓÅäÖÃÎÄ¼ş-------------------------------#
+#---------------------------------ä¸»é…ç½®æ–‡ä»¶é…ç½®:è¯¥é…ç½®æ–‡ä»¶åªéœ€è¦é€‰æ‹©ä»é…ç½®æ–‡ä»¶-------------------------------#
 spring:
   output:
     ansi:
       enabled: ALWAYS
-  # ĞòÁĞ»¯·µ»ØJSONÈÕÆÚÊ±ÇøÎª¶«°ËÇø,ÈÕÆÚ¸ñÊ½Îª 2019-04-17 11:42:20
+  # åºåˆ—åŒ–è¿”å›JSONæ—¥æœŸæ—¶åŒºä¸ºä¸œå…«åŒº,æ—¥æœŸæ ¼å¼ä¸º 2019-04-17 11:42:20
   mvc:
     date-format: yyyy-MM-dd HH:mm:ss
   jackson:
     time-zone: GMT+8
     date-format: yyyy-MM-dd HH:mm:ss
     property-naming-strategy: CAMEL_CASE_TO_LOWER_CASE_WITH_UNDERSCORES
-  # AOP ÅäÖÃ
+  # AOP é…ç½®
   aop:
     auto: true
     proxy-target-class: true
-#--------------------------------MyBatis Plus ÅäÖÃ------------------------------------#
+#--------------------------------MyBatis Plus é…ç½®------------------------------------#
 mybatis-plus:
-  # MyBatis ÊµÌåÀàÉ¨ÃèµÄ°üÃû
+  # MyBatis å®ä½“ç±»æ‰«æçš„åŒ…å
   type-aliases-package: com.shen.sample.entity
-  # MyBatis XML ÎÄ¼şÂ·¾¶
+  # MyBatis XML æ–‡ä»¶è·¯å¾„
   mapper-locations: classpath:mapper/*/*Mapper.xml
   global-config:
     db-config:
-      # Ö÷¼ü²ßÂÔ ×ÔÔö
+      # ä¸»é”®ç­–ç•¥ è‡ªå¢
       id-type: auto
-      # ±íÃû¡¢ÊÇ·ñÊ¹ÓÃÏÂ»®ÏßÃüÃû
+      # è¡¨åã€æ˜¯å¦ä½¿ç”¨ä¸‹åˆ’çº¿å‘½å
       table-underline: true
   configuration:
-    # ÍÕ·åÖ§³Ö
+    # é©¼å³°æ”¯æŒ
     map-underscore-to-camel-case: true
-    # ¹Ø±Õ¶ş¼¶»º´æ
+    # å…³é—­äºŒçº§ç¼“å­˜
     cache-enabled: false
   type-enums-package: com.shen.sample.entity.enums
