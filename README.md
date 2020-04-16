@@ -105,15 +105,14 @@ templatePath:
 
 效果图
 
-![image-20200415214152729](C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20200415214152729.png)
+![image-20200415214152729](image/demo.png)
 
 ### 演示效果
 
-
-<video src="D:\setup\迅雷影音\Xmp\profiles\截图\20200415_21311120204152136532.mp4"></video>
+<video src="image/demo2.mp4"></video>
 
 ### 接口文档效果
 
-![image-20200415215256842](C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20200415215256842.png)
+![image-20200415215256842](image/demo3.png)
 
-![image-20200415215344225](C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20200415215344225.png)
+![image-20200415215344225](image/demo4.png)
