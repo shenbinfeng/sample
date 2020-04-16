@@ -70,7 +70,7 @@ sample
 
 ### 自定义配置
 
-修改generator.yml
+修改generator.yml   (application-dev.yml文件根据自身环境修改)
 
 ```yaml
 #作者名称
@@ -109,7 +109,7 @@ templatePath:
 
 ### 演示效果
 
-<video src="image/demo2.mp4"></video>
+<img src="/image/demo5.gif" alt="demo5" style="zoom:150%;" />
 
 ### 接口文档效果
 
